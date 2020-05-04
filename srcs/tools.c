@@ -41,31 +41,32 @@ int		d_to_x_len(long origin, char c)
 	return (len);
 }
 
-char	*dec_to_hex(long origin, char c)
+char	*dec_to_hex(long nb, char c)
 {
 	char	*ref;
 	char	*final;
 	int		len_final;
-	long	nbr_long;
 
-	len_final = d_to_x_len(origin, c);
+	len_final = d_to_x_len(nb, c);
 	if (!(final = malloc(sizeof(*final) * len_final + 1)))
 		return (NULL);
+	if (nb > 4294967295)
+	{
+		ft_strcpy(final, "0");
+		return (final);
+	}
 	if (c == 'p' || c == 'P')
 		ft_strcpy(final, "0x");
 	ref = (c == 'X' || c == 'P') ? "0123456789ABCDEF" : "0123456789abcdef";
-	if (origin < 0)
-		final[0] = '-';
-	nbr_long = ABS(origin);
 	final[len_final] = '\0';
 	len_final--;
-	while (nbr_long >= 16)
+	while (nb >= 16)
 	{
-		final[len_final] = ref[nbr_long % 16];
+		final[len_final] = ref[nb % 16];
 		len_final--;
-		nbr_long /= 16;
+		nb /= 16;
 	}
-	final[len_final] = ref[nbr_long];
+	final[len_final] = ref[nb];
 	return (final);
 }
 
