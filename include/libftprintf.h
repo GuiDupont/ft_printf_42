@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/28 11:05:57 by user42            #+#    #+#             */
-/*   Updated: 2020/05/04 23:07:12 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/04 23:13:11 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,6 @@ void			ft_print_x(t_conf *conf, int *pft);
 void			ft_print_u(t_conf *conf, int *pft);
 void			ft_print_p(t_conf *conf, int *pft);
 void			ft_print_percentage(t_conf *conf, int *pft);
-int				abs(int x);
+int				abso(int x);
 
 #endif
