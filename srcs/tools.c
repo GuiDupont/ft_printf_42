@@ -24,16 +24,14 @@ char	get_symb(char const *str_global)
 	return (str_global[i]);
 }
 
-int		d_to_x_len(long origin, char c)
+int		d_to_x_len(unsigned int origin, char c)
 {
 	int		len;
-	long	nbr_long;
 
-	nbr_long = origin;
 	len = 1;
-	while (nbr_long >= 16)
+	while (origin >= 16)
 	{
-		nbr_long /= 16;
+		origin /= 16;
 		len++;
 	}
 	if (c == 'p' || c == 'P')
@@ -41,7 +39,7 @@ int		d_to_x_len(long origin, char c)
 	return (len);
 }
 
-char	*dec_to_hex(long nb, char c)
+char	*dec_to_hex(unsigned int nb, char c)
 {
 	char	*ref;
 	char	*final;
@@ -50,11 +48,6 @@ char	*dec_to_hex(long nb, char c)
 	len_final = d_to_x_len(nb, c);
 	if (!(final = malloc(sizeof(*final) * len_final + 1)))
 		return (NULL);
-	if (nb > 4294967295 && c != 'p')
-	{
-		ft_strcpy(final, "0");
-		return (final);
-	}
 	if (c == 'p' || c == 'P')
 		ft_strcpy(final, "0x");
 	ref = (c == 'X' || c == 'P') ? "0123456789ABCDEF" : "0123456789abcdef";
