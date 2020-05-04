@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 22:10:13 by user42            #+#    #+#             */
-/*   Updated: 2020/05/05 00:28:44 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/05 00:31:01 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	get_symb(char const *str_global)
 	return (str_global[i]);
 }
 
-int		d_to_x_len(unsigned int origin, char c)
+int		d_to_x_len(unsigned long origin, char c)
 {
 	int		len;
 
@@ -51,7 +51,7 @@ int		d_to_x_len(unsigned int origin, char c)
 	return (len);
 }
 
-char	*dec_to_x(unsigned int nb, char c)
+char	*dec_to_x(unsigned long nb, char c)
 {
 	char	*ref;
 	char	*final;
