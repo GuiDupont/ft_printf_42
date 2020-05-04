@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 22:19:25 by user42            #+#    #+#             */
-/*   Updated: 2020/05/04 12:35:26 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/04 12:41:36 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 
 void	set_left_align(char const *str, t_conf *conf)
 {
-	if (find_flag(str, '-'))
-		conf->l_align = 1;
-	else if (check_zero(str))
-		conf->zero = 1;
 	if (conf->symb == 's' && (!conf->dot ||
 	conf->precis < 0))
 		conf->precis = ft_strlen(conf->str);
@@ -29,6 +25,15 @@ void	set_left_align(char const *str, t_conf *conf)
 		conf->width = ABS(conf->width) + ft_strlen(conf->str);
 		conf->l_align = 1;
 	}
+	if ((conf->symb == 'i' || conf->symb == 'd') && conf->width < 0)
+	{
+		conf->width = ABS(conf->width) + ((conf->neg) ? 0 : 1);
+		conf->l_align = 1;
+	}
+	if (find_flag(str, '-') || conf->l_align)
+		conf->l_align = 1;
+	else if (check_zero(str))
+		conf->zero = 1;
 }
 
 void	set_str_c(char const *str, va_list *arg, t_conf *conf)
@@ -54,8 +59,6 @@ void	set_str_c(char const *str, va_list *arg, t_conf *conf)
 		conf->neg = 1;
 		delete_1st_char(conf->str);
 	}
-	if ((conf->symb == 'i' || conf->symb == 'd') && conf->width < 0)
-		conf->width = ABS(conf->width) + ((conf->neg) ? 0 : 1);
 }
 
 void	set_width_prec(char const *str, va_list *arg, t_conf *conf)
