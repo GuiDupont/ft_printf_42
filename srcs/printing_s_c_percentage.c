@@ -33,7 +33,6 @@ void	ft_print_s(t_conf *conf)
 
 void		ft_print_c(t_conf *conf)
 {
-	ft_putnbr(conf->width);
 	if (conf->l_align == 1)
 		ft_putchar(conf->c);
 	ft_putchar_nb(' ', conf->width - 1);
