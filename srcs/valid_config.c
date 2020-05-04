@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 22:19:25 by user42            #+#    #+#             */
-/*   Updated: 2020/05/04 21:35:07 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/04 21:38:11 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,10 @@ void	set_width_prec(char const *str, va_list *arg, t_conf *conf)
 	else if (ft_find_char(str, '*'))
 		conf->width = va_arg(*arg, int);
 	if (conf->precis < 0)
+	{
 		conf->precis = 0;
+		conf->dot = 0;
+	}
 }
 
 t_conf	*set_up_conf(char const *str, va_list *arg)
