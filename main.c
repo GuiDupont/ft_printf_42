@@ -8,10 +8,10 @@ int main()
 	int ft_pft;
 
 	a = 5;
-	ft_printf("%-*.*d-\n", -4, -2 , 0);
-	printf("%-*.*d-\n", -4, -2 , 0);
-	ft_printf("%-*.*i-\n", -4, -2 , 0);
-	printf("%-*.*i-\n", -4, -2 , 0);
+	ft_printf("%-*.*x-\n", 10, 5 , 1);
+	printf("%-*.*x-\n", 10, 5 , 1);
+	ft_printf("%-*.*x-\n", 10, 5 , 1);
+	printf("%-*.*x-\n", 10, 5 , 1);
 
 		/*
 	printf("-%-5");

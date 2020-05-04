@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 23:28:51 by user42            #+#    #+#             */
-/*   Updated: 2020/05/04 17:10:32 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/04 17:13:55 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,19 @@ void	ft_print_x(t_conf *conf)
 	if (conf->str[0] == '0' && !conf->precis && conf->dot)
 		conf->str[0] = '\0';
 	str_len = ft_strlen(conf->str);
-	fill = (conf->zero == 1) ? 's' : ' ';
+	fill = (conf->zero == 1) ? '0' : ' ';
 	conf->precis = (conf->precis <= str_len) ? str_len : conf->precis;
 	if (conf->l_align == 1)
 	{
-		ft_putchar_nb('s', conf->precis - str_len);
-	//	ft_putstr(conf->str);
+		ft_putchar_nb('0', conf->precis - str_len);
+		ft_putstr(conf->str);
 		ft_putchar_nb(fill, conf->width - conf->precis);
 	}
 	else
 	{
 		ft_putchar_nb(fill, conf->width - conf->precis);
-		ft_putchar_nb('s', conf->precis - str_len);
-	//	ft_putstr(conf->str);
+		ft_putchar_nb('0', conf->precis - str_len);
+		ft_putstr(conf->str);
 	}
 	free(conf->str);
 	PFT += (conf->precis < conf->width) ? conf->width : conf->precis;
