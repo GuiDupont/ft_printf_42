@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 22:19:25 by user42            #+#    #+#             */
-/*   Updated: 2020/05/04 12:41:36 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/04 12:45:26 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,8 @@
 
 void	set_left_align(char const *str, t_conf *conf)
 {
-	if (conf->symb == 's' && (!conf->dot ||
-	conf->precis < 0))
+	if (conf->symb == 's' && (!conf->dot || conf->precis < 0))
 		conf->precis = ft_strlen(conf->str);
-	if (conf->symb != 'c' && conf->symb != 's' && conf->symb != '%' &&
-	conf->dot == 1)
-		conf->zero = 0;
 	if (conf->width < 0 && conf->symb == 's')
 	{
 		conf->width = ABS(conf->width) + ft_strlen(conf->str);
@@ -34,6 +30,9 @@ void	set_left_align(char const *str, t_conf *conf)
 		conf->l_align = 1;
 	else if (check_zero(str))
 		conf->zero = 1;
+	if (conf->symb != 'c' && conf->symb != 's' && conf->symb != '%' &&
+	conf->dot == 1)
+		conf->zero = 0;
 }
 
 void	set_str_c(char const *str, va_list *arg, t_conf *conf)
