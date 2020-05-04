@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 23:28:51 by user42            #+#    #+#             */
-/*   Updated: 2020/05/04 17:01:46 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/04 17:06:49 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_print_x(t_conf *conf)
 	if (conf->str[0] == '0' && !conf->precis && conf->dot)
 		conf->str[0] = '\0';
 	str_len = ft_strlen(conf->str);
-	fill = (conf->zero == 1) ? '0' : ' ';
+	fill = (conf->zero == 1) ? 's' : ' ';
 	conf->precis = (conf->precis <= str_len) ? str_len : conf->precis;
 	if (conf->l_align == 1)
 	{
