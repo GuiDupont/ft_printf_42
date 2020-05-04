@@ -31,11 +31,6 @@ int		d_to_x_len(long origin, char c)
 
 	nbr_long = origin;
 	len = 1;
-	if (nbr_long < 0)
-	{
-		len += 1;
-		nbr_long = -nbr_long;
-	}
 	while (nbr_long >= 16)
 	{
 		nbr_long /= 16;

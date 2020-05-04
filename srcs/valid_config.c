@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 22:19:25 by user42            #+#    #+#             */
-/*   Updated: 2020/05/04 12:45:26 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/04 15:08:57 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,6 @@ int		valid_conf(char const *str, va_list *arg)
 
 	conf = set_up_conf(str, arg);
 	ft_print_conf(conf);
+	free(conf);
 	return (conf_is_valid(str) + 1);
 }

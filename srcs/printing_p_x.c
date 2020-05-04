@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 23:28:51 by user42            #+#    #+#             */
-/*   Updated: 2020/05/03 23:39:57 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/04 15:00:17 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,5 @@ void	ft_print_p(t_conf *conf)
 		PFT += (((str_len < conf->width) ? conf->width : str_len));
 	}
 	free(conf->str);
+	conf->str = NULL;
 }
