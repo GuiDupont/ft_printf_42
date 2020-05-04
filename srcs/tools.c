@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 22:10:13 by user42            #+#    #+#             */
-/*   Updated: 2020/05/04 22:10:47 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/05 00:28:44 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int		d_to_x_len(unsigned int origin, char c)
 	return (len);
 }
 
-char	*dec_to_hex(unsigned int nb, char c)
+char	*dec_to_x(unsigned int nb, char c)
 {
 	char	*ref;
 	char	*final;

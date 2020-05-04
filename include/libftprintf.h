@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/28 11:05:57 by user42            #+#    #+#             */
-/*   Updated: 2020/05/05 00:19:49 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/05 00:29:13 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void			delete_1st_char(char *str);
 void			ft_putchar_nb(char c, int nb);
 void			ft_putstr_nb(char *str, int nb);
 char			get_symb(char const *str_global);
-char			*dec_to_hex(unsigned int origin, char c);
+char			*dec_to_x(unsigned int origin, char c);
 int				ft_find_char(char const *str, char c);
 void			set_width(char const *str, t_conf *config);
 
@@ -71,6 +71,6 @@ void			ft_print_x(t_conf *conf, int *pft);
 void			ft_print_u(t_conf *conf, int *pft);
 void			ft_print_p(t_conf *conf, int *pft);
 void			ft_print_percentage(t_conf *conf, int *pft);
-long			abso(int x);
+long			abso(long x);
 
 #endif
