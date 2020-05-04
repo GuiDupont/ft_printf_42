@@ -8,10 +8,8 @@ int main()
 	int ft_pft;
 
 	a = 5;
-	printf("%-*c-\n", 12, '-');
-	ft_printf("%-*c-\n", 12, '-');
-	ft_printf("%-x-\n", 4294967296);
-	printf("%-x-\n", 4294967296);
+	ft_putnbr(printf("%-*c-\n", 12, '-'));
+	ft_putnbr(ft_printf("%-*c-\n", 12, '-'));
 
 		/*
 	printf("-%-5");
