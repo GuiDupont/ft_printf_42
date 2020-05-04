@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 22:19:25 by user42            #+#    #+#             */
-/*   Updated: 2020/05/04 23:27:10 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/04 23:39:41 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ void	set_left_align(char const *str, t_conf *conf)
 		conf->precis = ft_strlen(conf->str);
 	if (conf->width < 0 && (conf->symb == 's' || conf->symb == 'c'))
 	{
-		conf->width = ABS(conf->width) + ft_strlen(conf->str);
+		conf->width = abso(conf->width) + ft_strlen(conf->str);
 		conf->l_align = 1;
 	}
 	if (conf->symb != 'p' && conf->symb != 's' && conf->symb != 'c' &&
 		conf->symb != '%' && conf->width < 0)
 	{
-		conf->width = ABS(conf->width) + ((conf->neg) ? 0 : 1);
+		conf->width = abso(conf->width) + ((conf->neg) ? 0 : 1);
 		conf->l_align = 1;
 	}
 	if (find_flag(str, '-') || conf->l_align)
@@ -73,7 +73,7 @@ void	set_width_prec(char const *str, va_list *arg, t_conf *conf)
 		if (str[dot_pos + 1] == '*')
 			conf->precis = va_arg(*arg, int);
 		else
-			conf->precis = ABS(ft_atoi(&str[dot_pos + 1]));
+			conf->precis = abso(ft_atoi(&str[dot_pos + 1]));
 		conf->dot = 1;
 	}
 	else if (ft_find_char(str, '*'))
