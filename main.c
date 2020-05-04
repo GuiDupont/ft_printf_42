@@ -7,9 +7,15 @@ int main()
 	int pft;
 	int ft_pft;
 
-	a = 5;
+	a = -200;
 	ft_putnbr(printf("%-*c-\n", 12, '-'));
 	ft_putnbr(ft_printf("%-*c-\n", 12, '-'));
+	while (a < 200)
+	{
+		ft_putnbr(abso(a));
+		a++;
+		ft_putchar('\n');
+	}
 
 		/*
 	printf("-%-5");
