@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools_conf.c                                     :+:      :+:    :+:   */
+/*   tools_config.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 19:04:33 by user42            #+#    #+#             */
-/*   Updated: 2020/05/02 20:07:49 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/04 22:12:25 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	set_width(char const *str, t_conf *conf)
 		return ;
 	while (str[i])
 	{
-		temp[i] = str[i];	
+		temp[i] = str[i];
 		i++;
 	}
 	temp[i] = '\0';
@@ -59,7 +59,6 @@ void	set_width(char const *str, t_conf *conf)
 	conf->width = ft_atoi(&temp[i]);
 	free(temp);
 }
-
 
 void	delete_1st_char(char *str)
 {

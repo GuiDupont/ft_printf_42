@@ -6,13 +6,13 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 23:28:51 by user42            #+#    #+#             */
-/*   Updated: 2020/05/04 17:13:55 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/04 22:45:42 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libftprintf.h"
 
-void	ft_print_x(t_conf *conf)
+void	ft_print_x(t_conf *conf, int *pft)
 {
 	char	fill;
 	int		str_len;
@@ -35,10 +35,10 @@ void	ft_print_x(t_conf *conf)
 		ft_putstr(conf->str);
 	}
 	free(conf->str);
-	PFT += (conf->precis < conf->width) ? conf->width : conf->precis;
+	*pft += (conf->precis < conf->width) ? conf->width : conf->precis;
 }
 
-void	ft_print_p_null(t_conf *conf)
+void	ft_print_p_null(t_conf *conf, int *pft)
 {
 	int		str_len;
 	char	*to_print;
@@ -55,16 +55,15 @@ void	ft_print_p_null(t_conf *conf)
 		ft_putchar_nb(' ', conf->width - str_len);
 		ft_putstr(to_print);
 	}
-	PFT += (((str_len < conf->width) ? conf->width : str_len));	
+	*pft += (((str_len < conf->width) ? conf->width : str_len));
 }
 
-
-void	ft_print_p(t_conf *conf)
+void	ft_print_p(t_conf *conf, int *pft)
 {
 	int		str_len;
 
 	if (!ft_strcmp(conf->str, "0x0"))
-		ft_print_p_null(conf);
+		ft_print_p_null(conf, pft);
 	else
 	{
 		str_len = ft_strlen(conf->str);
@@ -78,7 +77,7 @@ void	ft_print_p(t_conf *conf)
 			ft_putchar_nb(' ', conf->width - str_len);
 			ft_putstr(conf->str);
 		}
-		PFT += (((str_len < conf->width) ? conf->width : str_len));
+		*pft += (((str_len < conf->width) ? conf->width : str_len));
 	}
 	free(conf->str);
 	conf->str = NULL;

@@ -6,15 +6,15 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/03 23:35:35 by user42            #+#    #+#             */
-/*   Updated: 2020/05/03 23:35:37 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/04 22:42:22 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libftprintf.h"
 
-int	print_single_char(char c)
+int	print_single_char(char c, int *pft)
 {
 	ft_putchar(c);
-	PFT++;
+	pft++;
 	return (1);
 }
