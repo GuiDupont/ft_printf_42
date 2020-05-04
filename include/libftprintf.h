@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/28 11:05:57 by user42            #+#    #+#             */
-/*   Updated: 2020/05/04 22:48:10 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/04 23:00:47 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 # include <strings.h>
 # include <stdarg.h>
 # include "../libft/libft.h"
-
-# define ABS(x) (x < 0) ? -x: x
 
 # define FLAGS "-0123456789.*\0"
 # define SYMB "cspdiuxX%\0"
