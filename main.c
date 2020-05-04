@@ -8,8 +8,8 @@ int main()
 	int ft_pft;
 
 	a = 5;
-	ft_printf("%*.*s-\n", 4, -6, "salut");
-	printf("%*.*s-\n", 4, -6, "salut");
+	printf("%*.*u-\n", -1, 0, 0);
+	ft_printf("%*.*u-\n", -1, 0, 0);
 	ft_printf("%-x-\n", 4294967296);
 	printf("%-x-\n", 4294967296);
 

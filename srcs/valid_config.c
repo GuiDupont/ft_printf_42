@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 22:19:25 by user42            #+#    #+#             */
-/*   Updated: 2020/05/04 21:38:11 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/04 21:46:00 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	set_left_align(char const *str, t_conf *conf)
 		conf->width = ABS(conf->width) + ft_strlen(conf->str);
 		conf->l_align = 1;
 	}
-	if ((conf->symb == 'i' || conf->symb == 'd') && conf->width < 0)
+	if ((conf->symb == 'i' || conf->symb == 'd' || conf->symb == 'u') 
+	&& conf->width < 0)
 	{
 		conf->width = ABS(conf->width) + ((conf->neg) ? 0 : 1);
 		conf->l_align = 1;
