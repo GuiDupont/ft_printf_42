@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/28 11:05:57 by user42            #+#    #+#             */
-/*   Updated: 2020/05/04 19:35:39 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/04 21:55:46 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	set_width(char const *str, t_conf *config);
 int		ft_printf(char const *str, ...);
 
 int		ft_print_d_i(t_conf *conf);
-int		ft_print_c(t_conf *conf);
+void	ft_print_c(t_conf *conf);
 void	ft_print_s(t_conf *conf);
 void	ft_print_x(t_conf *conf);
 int		ft_print_u(t_conf *conf);

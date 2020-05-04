@@ -31,15 +31,15 @@ void	ft_print_s(t_conf *conf)
 	PFT += (to_print < conf->width) ? conf->width : to_print;
 }
 
-int		ft_print_c(t_conf *conf)
+void		ft_print_c(t_conf *conf)
 {
+	ft_putnbr(conf->width);
 	if (conf->l_align == 1)
 		ft_putchar(conf->c);
 	ft_putchar_nb(' ', conf->width - 1);
 	if (conf->l_align == 0)
 		ft_putchar(conf->c);
 	PFT += (conf->width == 0) ? 1 : conf->width;
-	return ((conf->width == 0) ? 1 : conf->width);
 }
 
 int		ft_print_percentage(t_conf *conf)
