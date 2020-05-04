@@ -50,7 +50,7 @@ char	*dec_to_hex(long nb, char c)
 	len_final = d_to_x_len(nb, c);
 	if (!(final = malloc(sizeof(*final) * len_final + 1)))
 		return (NULL);
-	if (nb > 4294967295)
+	if (nb > 4294967295 && c != 'p')
 	{
 		ft_strcpy(final, "0");
 		return (final);
