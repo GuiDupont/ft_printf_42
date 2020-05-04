@@ -10,21 +10,10 @@ int main()
 	a = -200;
 	ft_putnbr(printf("%-*c-\n", 12, '-'));
 	ft_putnbr(ft_printf("%-*c-\n", 12, '-'));
-	while (a < 200)
-	{
-		ft_putnbr(abso(a));
-		a++;
-		ft_putchar('\n');
-	}
 
-		/*
-	printf("-%-5");
-	printf("-%*10s\n",23, NULL);
-	printf("-%08.5i\n", 2) ;
-	printf("-%010x\n", 2);
-	printf("-%010u\n", 2);
+	
 
-
+	ft_printf("-%0*d -%0*d-\n\n", 5,-12345, 20, -12345);
 
 	ft_putnbr(printf("-%*.*d-\n", 4, 0,0));
 	ft_printf("-%*.*d-\n",4 , 0 ,0);
@@ -144,7 +133,6 @@ int main()
 	printf("-%*p-\n", 1, &a);
 	ft_printf("-%*p-\n", 1,&a);
 
-	printf("-%*p-\n", 0,&a);
 
 	printf("|Computer %%*.*x| -%*.*x-\n", 10, 6, 12345);
 	ft_printf("|Me *.*x|        -%*.*x-\n\n", 10, 6, 12345);
@@ -231,11 +219,6 @@ int main()
 	 printf("|Computer %%*x| -%*x-\n", 10, 12345);
 	 ft_printf("|Me *s|        -%*x-\n\n", 10, 12345);
 
-		printf("-%5.6d-\n", 12);
-	ft_printf("-%s-\n\n", "salut");
-
-	printf("-%10d-\n", 12);
-	ft_printf("-%10s-\n\n", "salut");
 
 	printf("-%3s-\n", "salut");
 	ft_printf("-%3s-\n\n", "salut");
@@ -257,20 +240,12 @@ int main()
 	printf("-%c-\n", 'a');
 	ft_printf("-%c-\n", 'a');
 
-	printf("-%-5c-\n", 'a');
-	ft_printf("-%-5c%c%10c-\n", 'a', 'q', 'e');
 
 	printf("-%*c-\n", 1,'a');
 	ft_printf("-%*c-\n", 1, 'a');
 
 	printf("-%*c-\n", 12,'a');
 	ft_printf("-%*c-\n", 12, 'a');
-
-		printf("-%5.6d-\n", 12);
-	ft_printf("-%s-\n\n", "salut");
-
-	printf("-%10d-\n", 12);
-	ft_printf("-%10s-\n\n", "salut");
 
 
 	printf("-%3s-\n", "salut");
@@ -286,7 +261,6 @@ int main()
 	ft_printf("-%*.*s-\n\n", 1, 0, "salut");
 
 
-*/
 
 
 
