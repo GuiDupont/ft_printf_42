@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 22:19:25 by user42            #+#    #+#             */
-/*   Updated: 2020/05/04 12:28:31 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/04 12:35:26 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ void	set_str_c(char const *str, va_list *arg, t_conf *conf)
 		conf->neg = 1;
 		delete_1st_char(conf->str);
 	}
+	if ((conf->symb == 'i' || conf->symb == 'd') && conf->width < 0)
+		conf->width = ABS(conf->width) + ((conf->neg) ? 0 : 1);
 }
 
 void	set_width_prec(char const *str, va_list *arg, t_conf *conf)
