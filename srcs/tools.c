@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 22:10:13 by user42            #+#    #+#             */
-/*   Updated: 2020/05/05 13:10:34 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/05 14:46:04 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ char	*dec_to_x(unsigned int nb, char c)
 		nb /= 16;
 	}
 	final[len_final] = ref[nb];
+	ft_putstr(final);
 	return (final);
 }
 
