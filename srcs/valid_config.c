@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 22:19:25 by user42            #+#    #+#             */
-/*   Updated: 2020/05/05 11:40:11 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/05 13:12:22 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	set_left_align(char const *str, t_conf *conf)
 	if (conf->symb != 'p' && conf->symb != 's' && conf->symb != 'c' &&
 		conf->symb != '%' && conf->width < 0)
 	{
-		conf->width = abso(conf->width) + ((conf->neg) ? 0 : 1);
+		conf->width = abso(conf->width);
 		conf->l_align = 1;
 	}
 	if (find_flag(str, '-') || conf->l_align)
