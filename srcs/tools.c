@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 22:10:13 by user42            #+#    #+#             */
-/*   Updated: 2020/05/05 14:57:38 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/05 15:08:22 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	get_symb(char const *str_global)
 	return (str_global[i]);
 }
 
-int		d_to_x_len(unsigned int origin, char c)
+int		d_to_x_len(unsigned int origin)
 {
 	int		len;
 
@@ -46,8 +46,6 @@ int		d_to_x_len(unsigned int origin, char c)
 		origin /= 16;
 		len++;
 	}
-	if (c == 'p' || c == 'P')
-		len += 2;
 	return (len);
 }
 
@@ -58,12 +56,10 @@ char	*dec_to_x(unsigned int nb, char c)
 	int		len_final;
 
 	ft_putnbr(nb);
-	len_final = d_to_x_len(nb, c);
+	len_final = d_to_x_len(nb);
 	if (!(final = malloc(sizeof(*final) * len_final + 1)))
 		return (NULL);
-	if (c == 'p' || c == 'P')
-		ft_strcpy(final, "0x");
-	ref = (c == 'X' || c == 'P') ? "0123456789ABCDEF" : "0123456789abcdef";
+	ref = (c == 'X') ? "0123456789ABCDEF" : "0123456789abcdef";
 	final[len_final] = '\0';
 	len_final--;
 	while (nb >= 16)
@@ -73,7 +69,6 @@ char	*dec_to_x(unsigned int nb, char c)
 		nb /= 16;
 	}
 	final[len_final] = ref[nb];
-	ft_putstr(final);
 	return (final);
 }
 
@@ -89,4 +84,43 @@ int		ft_find_char(char const *str, char c)
 		i++;
 	}
 	return (0);
+}
+
+
+int		d_to_p_len(unsigned long origin)
+{
+	int		len;
+
+	len = 1;
+	while (origin >= 16)
+	{
+		origin /= 16;
+		len++;
+	}
+	len += 2;
+	return (len);
+}
+
+char	*dec_to_p(unsigned long nb)
+{
+	char	*ref;
+	char	*final;
+	int		len_final;
+
+	ft_putnbr(nb);
+	len_final = d_to_p_len(nb);
+	if (!(final = malloc(sizeof(*final) * len_final + 1)))
+		return (NULL);
+	ft_strcpy(final, "0x");
+	ref = "0123456789abcdef";
+	final[len_final] = '\0';
+	len_final--;
+	while (nb >= 16)
+	{
+		final[len_final] = ref[nb % 16];
+		len_final--;
+		nb /= 16;
+	}
+	final[len_final] = ref[nb];
+	return (final);
 }

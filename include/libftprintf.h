@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/28 11:05:57 by user42            #+#    #+#             */
-/*   Updated: 2020/05/05 00:42:48 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/05 15:05:31 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void			ft_putchar_nb(char c, int nb);
 void			ft_putstr_nb(char *str, int nb);
 char			get_symb(char const *str_global);
 char			*dec_to_x(unsigned int origin, char c);
+char			*dec_to_p(unsigned long origin);
 int				ft_find_char(char const *str, char c);
 void			set_width(char const *str, t_conf *config);
 
