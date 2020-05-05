@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 22:10:13 by user42            #+#    #+#             */
-/*   Updated: 2020/05/05 15:08:22 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/05 15:09:34 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,6 @@ char	*dec_to_p(unsigned long nb)
 	char	*final;
 	int		len_final;
 
-	ft_putnbr(nb);
 	len_final = d_to_p_len(nb);
 	if (!(final = malloc(sizeof(*final) * len_final + 1)))
 		return (NULL);
