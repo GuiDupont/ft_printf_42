@@ -6,7 +6,7 @@
 #    By: user42 <user42@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/29 11:12:01 by user42            #+#    #+#              #
-#    Updated: 2020/04/29 11:30:12 by user42           ###   ########.fr        #
+#    Updated: 2020/05/05 15:45:55 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRCS:= $(wildcard srcs/*.c)
 
 INCLUDES = -I./include
 
-all:	lib $(NAME)
+all: $(NAME)
 
 lib:
 	@make -C libft/ all 
