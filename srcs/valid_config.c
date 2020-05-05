@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 22:19:25 by user42            #+#    #+#             */
-/*   Updated: 2020/05/05 00:36:24 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/05 11:40:11 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	set_str_c(char const *str, va_list *arg, t_conf *conf)
 	if (conf->symb == 'd' || conf->symb == 'i')
 		conf->str = ft_itoa(va_arg(*arg, int));
 	if (conf->symb == 'x' || conf->symb == 'X')
-		conf->str = dec_to_x(va_arg(*arg, long), conf->symb);
+		conf->str = dec_to_x(va_arg(*arg, unsigned int), conf->symb);
 	if (conf->symb == 'u')
 		conf->str = ft_itoa_u(va_arg(*arg, unsigned int));
 	if (conf->str == NULL)
