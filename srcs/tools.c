@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 22:10:13 by user42            #+#    #+#             */
-/*   Updated: 2020/05/05 14:52:10 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/05 14:52:54 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ int		d_to_x_len(unsigned int origin, char c)
 	int		len;
 
 	len = 1;
-	(void)c;
 	while (origin >= 16)
 	{
 		origin /= 16;
