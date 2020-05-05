@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 22:10:13 by user42            #+#    #+#             */
-/*   Updated: 2020/05/05 00:44:20 by user42           ###   ########.fr       */
+/*   Updated: 2020/05/05 13:10:34 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ char	*dec_to_x(unsigned int nb, char c)
 	len_final = d_to_x_len(nb, c);
 	if (!(final = malloc(sizeof(*final) * len_final + 1)))
 		return (NULL);
-//	if (c == 'p' || c == 'P')
-//		ft_strcpy(final, "0x");
+	if (c == 'p' || c == 'P')
+		ft_strcpy(final, "0x");
 	ref = (c == 'X' || c == 'P') ? "0123456789ABCDEF" : "0123456789abcdef";
 	final[len_final] = '\0';
 	len_final--;
